@@ -1,15 +1,16 @@
 import React from 'react';
 import './Card.css';
 
-
-const Card = ({ title, img1, date }) => {
-    return (
-        <div className='card'>
-            <img src={img1}></img>
-            <h3>{title}</h3>
-            <p>{date}</p>
-        </div>
-    )
-}
+const Card = ({ title, description, imageUrl }) => {
+  return (
+    <div className="card">
+      <img src={imageUrl} alt={title} className="card-img" />
+      <div className="card-content">
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+    </div>
+  );
+};
 
 export default Card;

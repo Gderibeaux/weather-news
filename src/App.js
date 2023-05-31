@@ -1,26 +1,40 @@
-import './App.css';
-import newsData from './newsData.js'
-import React, { Component } from 'react'
-import News from "./News/News.js";
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import News from "./News/News";
+import SingleArticle from "./SingleArticle/SingleArticle";
+import { getArticles } from './ApiCalls/ApiCalls';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      news: newsData.articles
-    }
+      news: [],
+      error: ""
+    };
   }
 
-  render(){
-  return (
-    <div className="App">
-      <header className="App-header">
-      <h1>Weather News</h1>
-        <News news={this.state.news}/>
-      </header>
-    </div>
-  );
-}
+  componentDidMount() {
+    getArticles()
+      .then(newsData => {
+        console.log(newsData);
+        this.setState({ news: newsData.articles });
+      })
+      .catch(error => {
+        console.error(error.message);
+        this.setState({ error: error.message });
+      });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Switch>
+          <Route exact path="/" render={() => <News newsData={this.state.news} />} />
+          <Route path="/article/:key" component={SingleArticle} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
