@@ -6,6 +6,9 @@ import Header from "./Header/Header"
 import { getArticles } from './ApiCalls/ApiCalls';
 import SearchPage from './Search/Search';
 
+
+
+
 class App extends Component {
   constructor() {
     super();

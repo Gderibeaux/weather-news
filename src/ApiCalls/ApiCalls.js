@@ -1,6 +1,10 @@
+require('dotenv-webpack').config();
+
+const apiKey = process.env.REACT_APP_API_KEY;
+
 const getArticles = () => {
     return fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=b0535d72107e42b4a5469f0fbfee59d8`
+      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`
     )
       .then(res => {
         if (res.ok) {
@@ -17,7 +21,7 @@ const getArticles = () => {
   
   const searchArticles = (key) => {
     return fetch(
-      `https://newsapi.org/v2/everything?q=${key}&apiKey=b0535d72107e42b4a5469f0fbfee59d8`
+      `https://newsapi.org/v2/everything?q=${key}&apiKey=${apiKey}`
     )
       .then(res => {
         if (res.ok) {
