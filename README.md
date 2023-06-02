@@ -4,6 +4,7 @@
 - [News](#News)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
+  - [Planning](#planning)
   - [Technologies](#technologies)
   - [Contributors](#contributors)
   - [Wins](#wins)
@@ -16,7 +17,8 @@
 
 Welcome to News, a sophisticated web application meticulously I crafted was created within 8 hours. News empowers users to effortlessly finds news articles with a simple click. This innovative platform allows users to specify which articles they would like to search for by using a keyword. If a user doesnt know what to search our home page shows the top articles which each article will be clickable and be able to show more details about said article.
 
-
+## Planning 
+- [WireFrame](https://excalidraw.com/#json=xhia42FDABqdDpSMncPKZ,rGZ58yJjNJam6wq-C-B91w)
 
 
 ## Technologies
